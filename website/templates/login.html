@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block button %}
+    <a href=/signup>Signup</a>
+    <a href=.>Home</a>
+{% endblock %}
+
+
+{% block content %}
+
+<div>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    
+    <div class = login >
+        <p>Login to create your to-do list:</p>
+        <form method="post" >
+            <input type="email" name="email" placeholder="Enter email address">
+            <input type="password" name="password" placeholder="Enter password">
+            <input type="submit" value="Login">
+        </form>
+    </div>
+    <div>
+        <img class = catpic src="{{url_for('static', filename='cat.jpg')}}" alt="cat picture of the day">
+    </div>
+</div>
+{% endblock %}
+
+

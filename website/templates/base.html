@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <div class="navbar">
+        <meta charset="utf-8">
+        <a1>Your to-do list</a1>
+        {% block button %}
+        {% endblock %}
+        <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    </div>
+    <div class="main">
+        <body>
+        {% block content %}
+        {% endblock %}
+        </body>
+    </div>
+</html>
+
+
+
