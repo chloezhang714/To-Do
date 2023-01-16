@@ -1,7 +1,9 @@
 from os import path
+import os
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
+from dotenv import load_dotenv
 
 db = SQLAlchemy()
 DB_NAME = "database.db"
@@ -9,11 +11,11 @@ DB_NAME = "database.db"
 def create_app():
     app = Flask(__name__, static_folder='static')
     app.config['SECRET_KEY'] = 'secret'
-    app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
-    db.init_app(app)
+    app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
+    load_dotenv()
 
     from .models import User
-    create_database(app)
+    #create_database(app)
 
     from .views import views
     from .auth import auth
