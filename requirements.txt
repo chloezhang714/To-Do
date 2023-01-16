@@ -4,3 +4,6 @@ flask_sqlalchemy==3.0.2
 SQLAlchemy==1.4.41
 psycopg2==2.9.5
 python_dotenv==0.21.0
+gunicorn==20.1.0
+itsdangerous==2.1.2
+Jinja2==3.1.2
