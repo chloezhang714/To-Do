@@ -11,7 +11,7 @@ DB_NAME = "database.db"
 def create_app():
     app = Flask(__name__, static_folder='static')
     app.config['SECRET_KEY'] = 'secret'
-    app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///database.db"
+    app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
     load_dotenv()
 
     from .models import User
