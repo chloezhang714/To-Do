@@ -10,8 +10,6 @@ db = SQLAlchemy()
 DB_NAME = "database.db"
 
 def create_app():
-    migrate = Migrate(app, db)
-    app = Flask(__name__, static_folder='static')
     app.config['SECRET_KEY'] = 'secret'
     app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
     load_dotenv()
